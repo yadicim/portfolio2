@@ -54,7 +54,7 @@ export const Contact = ()=>{
     const handleSubmit = async(e) => {
         e.preventDefault();
         setIsLoading(true);
-        setSubsmitStatus({ type: null, message: ""});
+        setSubmitStatus({ type: null, message: ""});
         try {
             const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
             const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -82,7 +82,7 @@ export const Contact = ()=>{
 
         } catch (error) {
             console.error("EmailJS error:", error);
-            setSubsmitStatus({
+            setSubmitStatus({
                 type: "error",
                 message: 
                 error.text || t('contact.error_msg'),

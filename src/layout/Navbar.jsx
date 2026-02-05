@@ -190,7 +190,7 @@ const changeLanguage = (lang) => {
                                     clickHandle(lang.code);
                                     setIsMobileMenuOpen(false); 
                                 }}
-                                className={`flex-1 min-w-[100px] py-3 text-sm flex items-center justify-center gap-3 rounded-full transition-all cursor-pointer border border-white/5
+                                className={`flex-1 min-w-25 py-3 text-sm flex items-center justify-center gap-3 rounded-full transition-all cursor-pointer border border-white/5
                                     ${i18n.language === lang.code 
                                         ? "bg-(--color-surface) text-(--color-foreground) shadow-md" 
                                         : `glass text-(--color-muted-foreground)`
