@@ -43,6 +43,11 @@ const changeLanguage = (lang) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const theme = useContext(ThemeContext);
     const isLight = !theme.state.lightMode;
+    const languages = [
+  { code: 'en', label: 'English', flag: 'https://flagcdn.com/w40/gb.png' },
+  { code: 'fi', label: 'Suomi', flag: 'https://flagcdn.com/w40/fi.png' },
+  { code: 'tr', label: 'Türkçe', flag: 'https://flagcdn.com/w40/tr.png' },
+];
 
     useEffect(()=> {
         const handleScroll = () => {
@@ -66,20 +71,31 @@ const changeLanguage = (lang) => {
                 Yadigar Arslan <span className="text-primary"></span>
             </a>
 
-            {/*LANGUAGE BUTTONS*/}
-            < Button onClick={()=> clickHandle ('en') }>ENGLIISH</Button>
-            <Button onClick={()=> clickHandle ('fi') }>SUOMI</Button>
-            <Button onClick={()=> clickHandle ('tr') }>TURKCE</Button>
-            <p>aktif dil: {i18n.language}</p>
-            
-
-        
-            <div>
-
+            {/* Language Options*/}
+            <div className=" hidden md:flex glass rounded-full px-2 py-1  items-center gap-2 ml-8 ">
+                {languages.map((lang) => (
+                    <button
+                        key={lang.code}
+                        onClick={() => clickHandle(lang.code)}
+                        className={`px-4 py-2 text-sm flex items-center gap-2 rounded-full transition-all cursor-pointer duration-300
+                            ${i18n.language === lang.code 
+                                ? "bg-(--color-surface) text-(--color-foreground) shadow-sm" 
+                                : `hover:bg-(--color-surface)/50 ${isLight ? "text-black" : "text-(--color-muted-foreground)"}`
+                            }`}
+                    >
+                        <img 
+                            src={lang.flag} 
+                            alt={lang.code} 
+                            className="w-4 h-4 rounded-full object-cover" 
+                        />
+                        <span className="font-medium">{lang.label}</span>
+                    </button>
+                ))}
             </div>
 
+
             {/* NAVIGATION LINKS */}
-            <div className="hidden md:flex items-center  gap-5">
+            <div className="hidden md:flex justify-center gap-5 ml-8">
                 <div className="glass rounded-full px-2 py-1 flex items-center gap-10">
                     {navLinks.map((link, index) => (
                         <a href={link.href} 
@@ -110,7 +126,7 @@ const changeLanguage = (lang) => {
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                         placeholder= {t('navbar.search')}
-                        className=" opacity-0 group-hover:opacity-100 bg-transparent border-b border-(--color-primary) focus:outline-none w-16 lg:w-24 transition duration-500 " />
+                        className=" opacity-0 group-hover:opacity-100 bg-transparent border-b border-(--color-primary) focus:outline-none w-10 lg:w-20 transition duration-500 " />
                         <button type="submit" 
                         aria-label="search-button"
                         
@@ -165,6 +181,31 @@ const changeLanguage = (lang) => {
                         </a>
                     ))}
 
+                    {/* Mobile Language Options */}
+                    <div className="flex flex-wrap justify-center gap-2 mt-2 px-2">
+                        {languages.map((lang) => (
+                            <button
+                                key={lang.code}
+                                onClick={() => {
+                                    clickHandle(lang.code);
+                                    setIsMobileMenuOpen(false); 
+                                }}
+                                className={`flex-1 min-w-[100px] py-3 text-sm flex items-center justify-center gap-3 rounded-full transition-all cursor-pointer border border-white/5
+                                    ${i18n.language === lang.code 
+                                        ? "bg-(--color-surface) text-(--color-foreground) shadow-md" 
+                                        : `glass text-(--color-muted-foreground)`
+                                    }`}
+                            >
+                                <img 
+                                    src={lang.flag} 
+                                    alt={lang.code} 
+                                    className="w-5 h-5 rounded-full object-cover" 
+                                />
+                                <span className="font-bold uppercase">{lang.code}</span>
+                            </button>
+                        ))}
+                    </div>
+
                     <Button className="bg-linear-to-r from-[#4CFF9A] to-[#ff0088] text-black font-bold hover:opacity-90 transition-opacity border-none"
                       aria-label="mobile-contact-button"
                       onClick={() => {
@@ -176,7 +217,7 @@ const changeLanguage = (lang) => {
                         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                         }, 100);
                     }}  
-                        >Contact Me</Button>
+                        > {t('navbar.contact_me')}</Button>
 
             </div>
 

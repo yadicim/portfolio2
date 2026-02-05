@@ -117,6 +117,17 @@
     "header_2": "Kokemusta, joka",
     "header_3": "kertoo tarinan.",
     "header_p": "Monialainen ammatillinen matkani, jossa yhdistyvät oikeustiede ja ohjelmistokehitys."
+    },
+
+    "pro": {
+    "desc_1": "Verkkosivuprojekti, jossa keskityttiin rakenteeseen, responsiiviseen suunnitteluun ja front-end-kehityksen perusteisiin.",
+    "desc_2": "Katapultti on Unitylla toteutettu peli, jossa pelaajat laukaisevat esineitä interaktiivisessa ympäristössä. Projekti esittelee pelimekaniikkaa, vuorovaikutteisuutta ja responsiivista verkkojulkaisua.",
+    "desc_3": "Tapahtumasivu, joka sisältää navigointivalikon ja eri juhlapäiville omistettuja osioita. Toteutettu käyttäen HTML- ja PHP-kieliä.",
+    "header_1": "Valitut työt",
+    "header_2": "Opintojen aikana",
+    "header_3": "luodut projektit",
+    "header_p": "Valikoima opintojeni aikana toteuttamiani projekteja, jotka keskittyvät ohjelmistokehityksen perusteisiin ja käytännön ongelmanratkaisuun.",
+    "button": "Katso kaikki projektit"
     }
 
 

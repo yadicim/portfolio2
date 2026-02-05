@@ -111,7 +111,19 @@
     "header_2": "Zengin Bir",
     "header_3": "Mesleki Geçmiş.",
     "header_p": "Hukuk ve yazılım geliştirmeyi bir araya getiren disiplinler arası profesyonel yolculuğumun özeti."
-    }
+    }, 
+    "pro": {
+    "desc_1": "Sayfa yapısı, duyarlı (responsive) tasarım ve ön uç (front-end) geliştirme temellerine odaklanan bir uygulama projesi.",
+    "desc_2": "Katapultti, oyuncuların eğlenceli ve etkileşimli bir ortamda nesneleri fırlattığı, Unity ile geliştirilmiş bir oyundur. Proje; oyun mekaniği, etkileşim ve web tabanlı yayınlama süreçlerini sergiler.",
+    "desc_3": "Navigasyon menüsü ve çeşitli tatil etkinlik bölümleri içeren; HTML ve PHP kullanılarak oluşturulmuş bir etkinlik tanıtım projesi.",
+    "header_1": "Öne Çıkan Çalışmalar",
+    "header_2": "Eğitim Sürecinde",
+    "header_3": "Geliştirilen Projeler",
+    "header_p": "Eğitimim süresince geliştirdiğim, web geliştirme temelleri ve pratik problem çözme odaklı proje seçkisi.",
+    "button": "Tüm Projeleri Görüntüle"
+}
+
+
 }
 
 

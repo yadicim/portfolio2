@@ -2,12 +2,19 @@ import { ArrowUpRight, Github } from "lucide-react";
 import {AnimatedBorderButton} from "@/components/AnimatedBorderButton";
 import { useContext } from "react";
 import { ThemeContext } from "@/Context"; 
+import { useTranslation } from 'react-i18next';
 
+export const Projects = ()=>{
+    const { t } = useTranslation();
+    const theme = useContext(ThemeContext);
+    const isLight = !theme.state.lightMode;
+
+    
 const projects=[
     {
     title :"Kotkantien Malaus",
-    description:
-    "A practice web project focused on layout structure, responsive design, and front-end development fundamentals.",
+    description: "pro.desc_1",
+    
     image:"/projects/maalaus.webp",
     tags:["SVG", "Html", "CSS"],
     link:"https://geronimo.okol.org/~arsyad/index.html",
@@ -20,7 +27,7 @@ const projects=[
 
     {
         title: "KATAPULTTI",
-        description: "Katapultti is a game made with Unity, where players launch objects with a catapult in a fun and interactive environment. The project showcases game mechanics, interactivity, and responsive web deployment.",
+        description: "pro.desc_2",
         image: "/projects/katapultti.webp",
         tags: ["C#", "Unity", "Game", "Interactive"],
         link: "https://yadicim.itch.io/katapultti",
@@ -29,8 +36,8 @@ const projects=[
 
     {
         title: "Maailman Tapahtuma",
-        description:
-            "An event showcase web project with navigation menu, various holiday event sections, and front-end layout built using HTML and PHP.",
+        description: "pro.desc_3",
+            
         image: "/projects/tapahtuma.webp",
         tags: ["HTML", "PHP", "Responsive Design"],
         link: "https://geronimo.okol.org/~arsyad/Palvelinohjelmointi%20N%C3%A4ytt%C3%B6ty%C3%B6/index.php",
@@ -43,9 +50,6 @@ const projects=[
 
 
 ];
-export const Projects = ()=>{
-    const theme = useContext(ThemeContext);
-    const isLight = !theme.state.lightMode;
     return (
      <section id="projects" className="py-32 relative overflow-hidden" >
         {/*Bg glows*/ }
@@ -55,15 +59,14 @@ export const Projects = ()=>{
         <div className=" container mx-auto px-6 relative z-10">
             {/*SECTION HEADER*/}
             <div className=" text-center mx-auto max-w-3xl mb-16">
-                <span className=" text-(--color-secondary-foreground) text-sm font-medium tracking-wider uppercase animate-fade-in ">Featured Work</span>
+                <span className=" text-(--color-secondary-foreground) text-sm font-medium tracking-wider uppercase animate-fade-in ">{t('pro.header_1')}</span>
                 <h2 className=" text-(--color-opposite) text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100">
-                    Projects Created 
-                    <span className="font-serif italic font-normal text-white"> During My Studies
+                    {t('pro.header_2')}
+                    <span className="font-serif italic font-normal text-white"> {t('pro.header_3')}
                     </span>
                 </h2>
                 <p className="text-(--color-muted-foreground) animate-fade-in animation-delay-200">
-                    A selection of projects I built during my studies, focusing 
-                    on web development fundamentals and practical problem-solving.
+                    {t('pro.header_p')}
 
                 </p>
 
@@ -124,7 +127,7 @@ export const Projects = ()=>{
 
                             </div>
                             <p className={` text-sm {isLight ? "text-black" : "text-(--color-muted-foreground)" }`}>
-                                {project.description}
+                                {t(project.description)}
                             </p>
                             <div className=" flex flex-wrap gap-2">
                                {project.tags.map((tag, tagIdx) =>(
@@ -150,7 +153,7 @@ export const Projects = ()=>{
                 aria-label="github-all-projects-link"
                 rel="noopener noreferrer">
                 <AnimatedBorderButton >
-                    View All Projects 
+                    {t('pro.button')}
                     <ArrowUpRight className=" w-5 h-5" />
 
                 </AnimatedBorderButton>
