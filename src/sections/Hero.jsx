@@ -20,7 +20,8 @@ const skills =[
 export const Hero = ()=>{
     const theme = useContext(ThemeContext);
     const isLight = !theme.state.lightMode;
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const currentCvPath = `/cv/Yadigar_Arslan_${i18n.language}_cv.pdf`;
 
     return ( <section className="relative min-h-screen flex items-center overflow-hidden">
         {/*Background*/}
@@ -109,8 +110,8 @@ export const Hero = ()=>{
 
                     
                     <a
-                    href="/cv/Yadigar_Arslan_en_cv.pdf"
-                    download
+                    href={currentCvPath}
+                    ddownload={`Yadigar_Arslan_CV_${i18n.language}.pdf`}
                     className="inline-block "
                     >
                         <AnimatedBorderButton>
