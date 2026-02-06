@@ -54,7 +54,11 @@ export const Contact = ()=>{
     const handleSubmit = async(e) => {
         e.preventDefault();
         setIsLoading(true);
+<<<<<<< HEAD
         setSubmitStatus({ type: null, message: ""});
+=======
+        setSubsmitStatus({ type: null, message: ""});
+>>>>>>> ef9e1c12233a74459087520f05b23482b9c34b40
         try {
             const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
             const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -73,7 +77,11 @@ export const Contact = ()=>{
             },
             publicKey);
 
+<<<<<<< HEAD
             setSubmitStatus({
+=======
+            setSubsmitStatus({
+>>>>>>> ef9e1c12233a74459087520f05b23482b9c34b40
                 type: "success",
                 message:t('contact.success_msg'),
             });
@@ -82,7 +90,11 @@ export const Contact = ()=>{
 
         } catch (error) {
             console.error("EmailJS error:", error);
+<<<<<<< HEAD
             setSubmitStatus({
+=======
+            setSubsmitStatus({
+>>>>>>> ef9e1c12233a74459087520f05b23482b9c34b40
                 type: "error",
                 message: 
                 error.text || t('contact.error_msg'),

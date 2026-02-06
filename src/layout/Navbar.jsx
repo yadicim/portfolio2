@@ -44,9 +44,15 @@ const changeLanguage = (lang) => {
     const theme = useContext(ThemeContext);
     const isLight = !theme.state.lightMode;
     const languages = [
+<<<<<<< HEAD
   { code: 'en', label: 'En', flag: 'https://flagcdn.com/w40/gb.png' },
   { code: 'fi', label: 'Fi', flag: 'https://flagcdn.com/w40/fi.png' },
   { code: 'tr', label: 'Tr', flag: 'https://flagcdn.com/w40/tr.png' },
+=======
+  { code: 'en', label: 'English', flag: 'https://flagcdn.com/w40/gb.png' },
+  { code: 'fi', label: 'Suomi', flag: 'https://flagcdn.com/w40/fi.png' },
+  { code: 'tr', label: 'Türkçe', flag: 'https://flagcdn.com/w40/tr.png' },
+>>>>>>> ef9e1c12233a74459087520f05b23482b9c34b40
 ];
 
     useEffect(()=> {
@@ -190,7 +196,11 @@ const changeLanguage = (lang) => {
                                     clickHandle(lang.code);
                                     setIsMobileMenuOpen(false); 
                                 }}
+<<<<<<< HEAD
                                 className={`flex-1 min-w-25 py-3 text-sm flex items-center justify-center gap-3 rounded-full transition-all cursor-pointer border border-white/5
+=======
+                                className={`flex-1 min-w-[100px] py-3 text-sm flex items-center justify-center gap-3 rounded-full transition-all cursor-pointer border border-white/5
+>>>>>>> ef9e1c12233a74459087520f05b23482b9c34b40
                                     ${i18n.language === lang.code 
                                         ? "bg-(--color-surface) text-(--color-foreground) shadow-md" 
                                         : `glass text-(--color-muted-foreground)`
