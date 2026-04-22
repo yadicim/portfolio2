@@ -61,7 +61,7 @@ export const Navbar = () => {
             <nav className="container mx-auto px-6 flex items-center justify-between">
 
                 {/* LOGO */}
-                <a href="#" className="ml-10 text-xl font-bold tracking-tight hover:text-(--color-primary)">
+                <a href="#" className="ml-2 md:ml-10 text-xl font-bold tracking-tight hover:text-(--color-primary)">
                     Yadigar Arslan
                 </a>
 
