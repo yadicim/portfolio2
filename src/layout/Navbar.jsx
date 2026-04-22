@@ -84,7 +84,7 @@ export const Navbar = () => {
                 </div>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex gap-5 ml-8">
+                <div className="flex gap-3 md:gap-5 overflow-x-auto">
                     <div className="glass rounded-full px-2 py-1 flex items-center gap-10">
                         {navLinks.map((link, i) => (
                             <a
@@ -134,10 +134,7 @@ export const Navbar = () => {
                     </div>
 
                     {/* Mobile button */}
-                    <button
-                        className="md:hidden p-2"
-                        onClick={() => setIsMobileMenuOpen(prev => !prev)}
-                    >
+                   
                         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
 
