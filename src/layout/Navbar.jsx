@@ -1,5 +1,17 @@
-// ... (importlar aynı)
 
+import { Button } from "@/components/Button";
+
+import { Menu, X } from "lucide-react";
+
+import { useEffect, useState, useContext } from "react";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+
+import { ThemeContext } from "@/Context";
+
+import { useTranslation } from "react-i18next";
 export const Navbar = () => {
     const { t, i18n } = useTranslation();
     const [search, setSearch] = useState("");
