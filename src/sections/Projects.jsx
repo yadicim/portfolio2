@@ -49,8 +49,9 @@ const projects=[
     description: "pro.desc_4",
     image: "/projects/react-native.png",
     tags: ["React Native", "Expo", "Firebase", "Firestore"],
-    
-    github: "https://github.com/yadicim/Oulu-guide.git"
+    link:null,
+    github: "https://github.com/yadicim/Oulu-guide.git",
+    mobile:true
     }
 
     
@@ -93,16 +94,25 @@ const projects=[
                     style={{ animationDelay: `${(idx +1)* 100}ms`}}
                     >
                         {/*IMAGE*/}
-                        <div className=" relative overflow-hidden h-auto group/image-box">
-                            <img src={project.image}
-                            loading="lazy"
-                             alt={project.title}
-                             className={`w-full h-auto  transition-transform duration-5000 ease-in-out transform 
-                                ${idx === 2
-                                    ?"w-full h-auto  transition-transform duration-5000 ease-in-out transform group-hover/image-box:-translate-y-[calc(100%-256px)] "
-                                    :"h-full object-cover group-hover/image-box:scale-110"
-                                }`}
-                            />
+                        <div
+    className={`relative overflow-hidden group/image-box ${
+        project.mobile
+            ? "h-[420px] flex items-center justify-center bg-(--color-surface)"
+            : "h-auto"
+    }`}
+>
+    <img
+        src={project.image}
+        loading="lazy"
+        alt={project.title}
+        className={
+            project.mobile
+                ? "h-[380px] w-auto object-contain rounded-xl shadow-xl transition-transform duration-500 group-hover/image-box:scale-105"
+                : idx === 2
+                    ? "w-full h-auto transition-transform duration-5000 ease-in-out transform group-hover/image-box:-translate-y-[calc(100%-256px)]"
+                    : "w-full h-full object-cover transition-transform duration-500 group-hover/image-box:scale-110"
+        }
+    />
 
                             
 
