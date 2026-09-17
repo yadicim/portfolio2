@@ -42,6 +42,15 @@ const projects=[
         tags: ["HTML", "PHP", "Responsive Design"],
         link: "https://geronimo.okol.org/~arsyad/Palvelinohjelmointi%20N%C3%A4ytt%C3%B6ty%C3%B6/index.php",
         github: "https://github.com/yadicim/Tapahtuma.git"
+    },
+
+    {
+    title: "Oulu Guide",
+    description: "pro.desc_4",
+    image: "/projects/react-native.png",
+    tags: ["React Native", "Expo", "Firebase", "Firestore"],
+    
+    github: "https://github.com/yadicim/Oulu-guide.git"
     }
 
     
@@ -101,12 +110,17 @@ const projects=[
                             {/*OVERLAY LINKS*/}
                             <div className=" absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ">
 
-                                <a href={project.link} 
-                                aria-label={`View ${project.title} live demo`}
-                                
-                                className="p-3 rounded-full glass  hover:text-(--color-primary) transition-all">
-                                    <ArrowUpRight className="w-5 h-5"/>
-                                </a>
+                                {project.link && (
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`View ${project.title} live demo`}
+                                        className="p-3 rounded-full glass hover:text-(--color-primary) transition-all"
+                                    >
+                                        <ArrowUpRight className="w-5 h-5"/>
+                                    </a>
+                                )}
 
                                 <a href={project.github} className="p-3 rounded-full glass  hover:text-(--color-opposite) transition-all">
                                     <Github className="w-5 h-5" />
@@ -126,9 +140,13 @@ const projects=[
                                  <ArrowUpRight className=" w-5 h-5 text-(--color-muted-foreground) group-hover:text-(--color-primary) group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"/>
 
                             </div>
-                            <p className={` text-sm {isLight ? "text-black" : "text-(--color-muted-foreground)" }`}>
-                                {t(project.description)}
-                            </p>
+                                <p
+                                    className={`text-sm ${
+                                        isLight ? "text-black" : "text-(--color-muted-foreground)"
+                                    }`}
+                                    >
+                                    {t(project.description)}
+                                </p>
                             <div className=" flex flex-wrap gap-2">
                                {project.tags.map((tag, tagIdx) =>(
                                 <span 

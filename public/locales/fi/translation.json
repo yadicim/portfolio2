@@ -122,6 +122,7 @@
     "pro": {
     "desc_1": "Verkkosivuprojekti, jossa keskityttiin rakenteeseen, responsiiviseen suunnitteluun ja front-end-kehityksen perusteisiin.",
     "desc_2": "Katapultti on Unitylla toteutettu peli, jossa pelaajat laukaisevat esineitä interaktiivisessa ympäristössä. Projekti esittelee pelimekaniikkaa, vuorovaikutteisuutta ja responsiivista verkkojulkaisua.",
+    "desc_4": "React Nativella ja Expolla toteutettu mobiiliopas Oulun kohteiden, ravintoloiden ja kahviloiden löytämiseen. Sovelluksessa käytetään Firebase Authenticationia käyttäjätunnuksiin ja Firestorea tietojen hallintaan.",
     "desc_3": "Tapahtumasivu, joka sisältää navigointivalikon ja eri juhlapäiville omistettuja osioita. Toteutettu käyttäen HTML- ja PHP-kieliä.",
     "header_1": "Valitut työt",
     "header_2": "Opintojen aikana",
