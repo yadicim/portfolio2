@@ -31,7 +31,9 @@ i18n
   .use(LanguageDetector)
   .init({
     fallbackLng: "en",
-    debug: true,
+    debug: false,
+    supportedLngs: ["en", "fi", "tr"],
+    load: "languageOnly",
     
     
     interpolation: {
