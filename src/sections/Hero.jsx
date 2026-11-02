@@ -3,25 +3,18 @@ import { ArrowRight, ChevronDown, Download, Github, Linkedin , } from "lucide-re
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { useContext } from "react";
 import { ThemeContext } from "@/Context"; 
-import { text } from "@fortawesome/fontawesome-svg-core";
 import { useTranslation } from 'react-i18next';
-const skills =[
-    "React",
-    "Python",
-    "JavaScript/ Bootstrap /JQuery",
-    "C#",
-    "C",
-    "SQL",
-    "PHP",
-    "HTML",
-    "CSS/Tailwindcss",
-    "SVG"
+const skills = [
+    "React", "React Native", "TypeScript", "JavaScript", "PHP", "NestJS",
+    "SQL / MariaDB", "Jest", "Git / GitHub", "HTML / CSS", "Python", "C#"
 ];
 export const Hero = ()=>{
     const theme = useContext(ThemeContext);
     const isLight = !theme.state.lightMode;
     const { t, i18n } = useTranslation();
-    const currentCvPath = `/cv/Yadigar_Arslan_${i18n.language}_cv.pdf`;
+    const language = (i18n.resolvedLanguage || i18n.language || "en").split("-")[0];
+    const cvLanguage = ["fi", "en", "tr"].includes(language) ? language : "en";
+    const currentCvPath = `/cv/Yadigar_Arslan_${cvLanguage}_cv.pdf`;
 
     return ( <section className="relative min-h-screen flex items-center overflow-hidden">
         {/*Background*/}
@@ -84,7 +77,7 @@ export const Hero = ()=>{
             <div className=" space-y-8">
                 <div className=" ml-0 md:ml-12 animate-fade-in animate-delay-100">
                     <span className=" inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-(--color-primary) ">
-                        <span className=" w-2 h-2 bg-(--color-primary) rounded-full animate-pulse " /> {t('hero.title_1')} <span className= {` rotate-30 ${isLight ? "text-black" : "text-(--color-muted-foreground)" }`}> {t('hero.title_1_1')} </span> 
+                        <span className=" w-2 h-2 bg-(--color-primary) rounded-full animate-pulse " /> {t('hero.title_1')}
                     </span>
                 </div>
                 {/*HEADLINE*/}
@@ -111,7 +104,7 @@ export const Hero = ()=>{
                     
                     <a
                     href={currentCvPath}
-                    ddownload={`Yadigar_Arslan_CV_${i18n.language}.pdf`}
+                    download={`Yadigar_Arslan_CV_${cvLanguage.toUpperCase()}.pdf`}
                     className="inline-block "
                     >
                         <AnimatedBorderButton>
@@ -126,7 +119,7 @@ export const Hero = ()=>{
                     <span className="ml-0 md:ml-12 text-sm  text-(--color-muted-foreground)  ">{t('hero.follow_me')} </span>
                     {[
                         { icon: Github, href: "https://github.com/yadicim"},
-                        { icon: Linkedin, href: "https://www.linkedin.com/in/yadigara/"},
+                        { icon: Linkedin, href: "https://www.linkedin.com/in/yadigarar"},
                         
                     ].map ((social, idx) => (
                         <a key={idx} href={social.href}
@@ -200,7 +193,7 @@ export const Hero = ()=>{
 
     <div className=" absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-600">
                 <a
-                href="#About"
+                href="#about"
                 className="flex flex-col items-center gap-2 text-(--color-muted-foreground) hover:text-(--color-primary) transition-colors group">
                     <span className="text-xs uppercase tracking-wider">Scroll</span>
                     <ChevronDown className="w-6 h-6 animate-bounce"/>

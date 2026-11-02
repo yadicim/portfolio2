@@ -11,6 +11,12 @@ import { useTranslation } from 'react-i18next';
 
 
         const experiences = [
+    {
+        period: "exp.period_8",
+        role: "exp.role_8",
+        company: "exp.company_8",
+        description: "exp.desc_8",
+    },
 
     {
         period: "exp.period_1",

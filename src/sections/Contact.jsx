@@ -37,8 +37,8 @@ export const Contact = ()=>{
      {
         icon:Phone,
         label:"contact.info.label_2",
-        value:"+358 46 593 31 54",
-        href:"tel:+358465933154",
+        value:"+358 56 593 3154",
+        href:"tel:+358565933154",
     },
 
     {
