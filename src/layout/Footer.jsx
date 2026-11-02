@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/yadicim", label: "GitHub" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/yadigara/", label: "LinkedIn" }
+  { icon: Linkedin, href: "https://www.linkedin.com/in/yadigarar", label: "LinkedIn" }
 ];
 
 export const Footer = () => {
