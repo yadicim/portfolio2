@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&family=VT323&display=swap");
 @import "tailwindcss";
 
 
@@ -208,3 +208,8 @@
   }
 
 }
+/* Typography-only preview; preserve the original visual design. */
+body { font-family: "Roboto Mono", "Courier New", monospace; }
+h1, #projects h3, .font-matrix, .font-mono { font-family: "VT323", monospace; }
+
+header { font-family: "VT323", monospace; }
