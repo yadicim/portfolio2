@@ -21,8 +21,8 @@ export const Navbar = ()=>{
     const {t, i18n}= useTranslation();
     const navLinks=[
     {href: "#about", label: t('navbar.about') },
-    {href: "#projects", label: t('navbar.projects')},
     {href: "#experience", label: t('navbar.experience')},
+    {href: "#projects", label: t('navbar.projects')},
     
 
 ];
