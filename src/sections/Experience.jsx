@@ -1,154 +1,36 @@
-import { useContext } from "react";
-import { ThemeContext } from "@/Context"; 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
-
-
-    export const Experience = () => {
-        const { t } = useTranslation();
-        const theme = useContext(ThemeContext);
-        const isLight = !theme.state.lightMode;
-
-
-        const experiences = [
-    {
-        period: "exp.period_8",
-        role: "exp.role_8",
-        company: "exp.company_8",
-        description: "exp.desc_8",
-    },
-
-    {
-        period: "exp.period_1",
-        role: "exp.role_1",
-        company: "exp.company_1",
-        description: "exp.desc_1",
-       
-       
-    },
-
-    {
-        period: "exp.period_2",
-        role: "exp.role_2",
-        company: "exp.company_2",
-        description:"exp.desc_2",
-           
-        
-    },
-
-
-    {
-        period: "exp.period_3",
-        role: "exp.role_3",
-        company: "exp.company_3",
-        description: "exp.desc_3",
-            
-    },
-
-    {
-        period: "exp.period_4",
-        role: "exp.role_4",
-        company: "exp.company_4",
-        description: "exp.desc_4",
-            
-      
-    },
-    {
-        period: "exp.period_5",
-        role: "exp.role_5",
-        company: "exp.company_5",
-        description:"exp.desc_5",
-           
-        
-    },
-
-    {
-        period: "exp.period_6",
-        role: "exp.role_6",
-        company: "exp.company_6",
-        description: "exp.desc_6",
-            
-    },
-    {
-        period: "exp.period_7",
-        role:"exp.role_7",
-        company: "exp.company_7",
-        description:"exp.desc_7",
-           
-       
-    },
-    
-    ];
-         return (
-             <section
-             id="experience"
-             className="py-32 relative overflow-hidden">
-                <div className=" absolute top-1/2 left-1/4 w-96 h-96 
-                  bg-(--color-primary)/5 rounded-full blur-3xl -translate-y-1/2">
-                    
-                </div>
-
-                <div className=" container mx-auto px-6 relative z-10">
-                    {/*SECTION HEADER*/}
-                    <div className=" max-w-3xl mb-16">
-                        <span className="text-(--color-primary) text-sm font-medium tracking-wider uppercase animate-fade-in "> {t('exp.header_1')} </span>
-                        <h2 className=" text-(--color-opposite) text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100">
-                             {t('exp.header_2')}<span className="font-serif italic font-normal text-white"> {t('exp.header_3')} </span>
-                        </h2>
-                        <p className="text-(--color-muted-foreground) animate-fade-in animation-delay-200">
-                             {t('exp.header_p')}
-                        </p>
-
-                    </div>
-
-                    {/*TIMELINE*/}
-                    <div className=" relative">
-                        <div className=" timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-(--color-primary)/70 via-(--color-primary)/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(76,255,154,0.8)]"/>
-                        
-                        {/*EXPERIENCE ITEMS*/}
-                        <div className=" space-y-12">
-                            {experiences.map((exp, idx) =>(
-                                <div key={idx} className=" relative grid md:grid-cols-2 gap-8 animate-fade-in"
-                                style={{ animationDelay: `${(idx +1)*150}ms`}}
-                                >
-
-                                    {/*TIMELINE DOT */}
-                                    <div className=" absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-(--color-primary) rounded-full -translate-x-1/2 ring-4 ring-(--color-opposite) z-10 ">
-
-                                    </div>
-
-                                    {/*CONTENT*/} 
-                                    <div className={`pl-8 md:pl-0 ${idx % 2 === 0 
-                                        ? "md:pr-16 md:text-right"
-                                        : " md:col-start-2 md:pl-16"
-                                        }`}>
-                                        <div className={` glass p-6 rounded-2xl border border-(--color-opposite)/40 hover:border-(--color-opposite)/80 transition-all duration-500`}>
-                                            <span className=" text-sm text-(--color-primary) font-medium"> {t(exp.period)} </span>
-                                            <h3 className=" text-xl font-bold mt-2">{t(exp.role)} </h3>
-                                            <p className={` ${isLight ? "text-white" : "text-(--color-muted-foreground)" }`}>{t(exp.company)} </p>
-                                            <p className={` text-sm ${isLight ? "text-black" : "text-(--color-muted-foreground)" }`}>{t(exp.description)} </p>
-
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-                            ))}
-
-                        </div>
-
-                        
-
-                    </div>
-
-
-                </div>
-
-             </section> 
-        );
-
-    };
-
-
-   
+export const Experience = () => {
+  const { t } = useTranslation();
+  return (
+    <section id="experience" className="py-24 relative">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-3xl mb-10">
+          <span className="text-(--color-primary) text-sm font-medium tracking-wider uppercase">{t('exp.header_1')}</span>
+          <h2 className="text-4xl md:text-5xl mt-4 mb-5">{t('exp.section_title')}</h2>
+          <p className="text-(--color-muted-foreground)">{t('exp.section_intro')}</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[8, 1, 2].map((id) => (
+            <article key={id} className={`glass rounded-2xl p-7 border ${id === 8 ? 'border-(--color-primary)/50' : 'border-(--color-border)'}`}>
+              <span className="text-sm text-(--color-primary)">{t(`exp.period_${id}`)}</span>
+              <h3 className="text-3xl mt-3 mb-2">{t(`exp.role_${id}`)}</h3>
+              <p className="text-sm mb-4">{t(`exp.company_${id}`)}</p>
+              <p className="text-sm text-(--color-muted-foreground)">{t(`exp.desc_${id}`)}</p>
+            </article>
+          ))}
+        </div>
+        <details className="glass rounded-2xl p-6 md:p-8 mt-8">
+          <summary className="cursor-pointer text-lg font-semibold text-(--color-primary)">{t('exp.previous_title')}</summary>
+          <p className="text-sm text-(--color-muted-foreground) mt-4 mb-5">{t('exp.previous_intro')}</p>
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-4">
+            {[3,4,5,6,7].map(id => <div key={id} className="border-t border-(--color-border) pt-3">
+              <h3 className="text-2xl">{t(`exp.role_${id}`)}</h3>
+              <p className="text-sm text-(--color-muted-foreground)">{t(`exp.company_${id}`)} · {t(`exp.period_${id}`)}</p>
+            </div>)}
+          </div>
+        </details>
+      </div>
+    </section>
+  );
+};

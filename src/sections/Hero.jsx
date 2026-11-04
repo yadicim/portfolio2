@@ -177,7 +177,7 @@ export const Hero = ()=>{
         {/*SKILLS*/}
 
         <div className="mt-20 animate-fade-in animation-delay-500">
-            <p className=" text-sm text-(--color-muted-foreground) mb-6 text-center"> Tech Stack </p>
+            <p className=" text-sm text-(--color-muted-foreground) mb-6 text-center"> {t('hero.tech_stack')} </p>
 
         </div>
         <div className=" relative overflow-hidden">
@@ -195,7 +195,7 @@ export const Hero = ()=>{
                 <a
                 href="#about"
                 className="flex flex-col items-center gap-2 text-(--color-muted-foreground) hover:text-(--color-primary) transition-colors group">
-                    <span className="text-xs uppercase tracking-wider">Scroll</span>
+                    <span className="text-xs uppercase tracking-wider">{t('hero.scroll')}</span>
                     <ChevronDown className="w-6 h-6 animate-bounce"/>
 
                 </a>

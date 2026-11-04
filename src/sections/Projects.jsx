@@ -12,7 +12,17 @@ export const Projects = ()=>{
     
 const projects=[
     {
-    title :"Kotkantien Malaus",
+    title: "Oulu Guide",
+    description: "pro.desc_4",
+    image: "/projects/react-native.png",
+    tags: ["React Native", "Expo", "Firebase", "Firestore"],
+    link:null,
+    github: "https://github.com/yadicim/Oulu-guide.git",
+    mobile:true
+    },
+
+    {
+    title :"Kotkantien Maalaus",
     description: "pro.desc_1",
     
     image:"/projects/maalaus.webp",
@@ -36,6 +46,7 @@ const projects=[
 
     {
         title: "Maailman Tapahtuma",
+        scrollPreview: true,
         description: "pro.desc_3",
             
         image: "/projects/tapahtuma.webp",
@@ -44,15 +55,7 @@ const projects=[
         github: "https://github.com/yadicim/Tapahtuma.git"
     },
 
-    {
-    title: "Oulu Guide",
-    description: "pro.desc_4",
-    image: "/projects/react-native.png",
-    tags: ["React Native", "Expo", "Firebase", "Firestore"],
-    link:null,
-    github: "https://github.com/yadicim/Oulu-guide.git",
-    mobile:true
-    }
+
 
     
 
@@ -108,7 +111,7 @@ const projects=[
         className={
             project.mobile
                 ? "h-[380px] w-auto object-contain rounded-xl shadow-xl transition-transform duration-500 group-hover/image-box:scale-105"
-                : idx === 2
+                : project.scrollPreview
                     ? "w-full h-auto transition-transform duration-5000 ease-in-out transform group-hover/image-box:-translate-y-[calc(100%-256px)]"
                     : "w-full h-full object-cover transition-transform duration-500 group-hover/image-box:scale-110"
         }
@@ -118,21 +121,21 @@ const projects=[
 
                           
                             {/*OVERLAY LINKS*/}
-                            <div className=" absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ">
+                            <div className=" absolute inset-0 flex items-center justify-center gap-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100 transition-opacity duration-300 ">
 
                                 {project.link && (
                                     <a
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        aria-label={`View ${project.title} live demo`}
+                                        aria-label={t('pro.demo_label', { title: project.title })}
                                         className="p-3 rounded-full glass hover:text-(--color-primary) transition-all"
                                     >
                                         <ArrowUpRight className="w-5 h-5"/>
                                     </a>
                                 )}
 
-                                <a href={project.github} className="p-3 rounded-full glass  hover:text-(--color-opposite) transition-all">
+                                <a href={project.github} aria-label={t('pro.code_label', { title: project.title })} className="p-3 rounded-full glass  hover:text-(--color-opposite) transition-all">
                                     <Github className="w-5 h-5" />
                                 </a>
 
@@ -157,6 +160,10 @@ const projects=[
                                     >
                                     {t(project.description)}
                                 </p>
+                            <div className="border-l-2 border-(--color-primary)/60 pl-4 text-sm">
+                                <span className="font-semibold">{t('pro.contribution_label')}</span>
+                                <p className="text-(--color-muted-foreground) mt-1">{t(project.description.replace('desc_', 'contribution_'))}</p>
+                            </div>
                             <div className=" flex flex-wrap gap-2">
                                {project.tags.map((tag, tagIdx) =>(
                                 <span 
