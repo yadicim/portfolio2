@@ -40,8 +40,8 @@ function App() {
         <Toggle />
         <Hero />
         <About />
-        <Projects />
         <Experience />
+        <Projects />
         <Contact />
       </main>
       <Footer />
